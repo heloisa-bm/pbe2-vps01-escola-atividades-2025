@@ -1,4 +1,3 @@
--- CreateTable
 CREATE TABLE `Aluno` (
     `ra` VARCHAR(10) NOT NULL,
     `nome` VARCHAR(191) NOT NULL,
@@ -8,7 +7,6 @@ CREATE TABLE `Aluno` (
     PRIMARY KEY (`ra`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- CreateTable
 CREATE TABLE `Telefone` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `numero` VARCHAR(191) NOT NULL,
@@ -18,7 +16,7 @@ CREATE TABLE `Telefone` (
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- CreateTable
+
 CREATE TABLE `Atividade` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `descricao` VARCHAR(191) NOT NULL,
@@ -32,8 +30,8 @@ CREATE TABLE `Atividade` (
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- AddForeignKey
+
 ALTER TABLE `Telefone` ADD CONSTRAINT `Telefone_alunoId_fkey` FOREIGN KEY (`alunoId`) REFERENCES `Aluno`(`ra`) ON DELETE CASCADE ON UPDATE CASCADE;
 
--- AddForeignKey
+
 ALTER TABLE `Atividade` ADD CONSTRAINT `Atividade_alunoId_fkey` FOREIGN KEY (`alunoId`) REFERENCES `Aluno`(`ra`) ON DELETE CASCADE ON UPDATE CASCADE;
