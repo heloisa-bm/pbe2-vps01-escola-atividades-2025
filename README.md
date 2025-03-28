@@ -27,5 +27,31 @@ Desenvolver as funcionalidades conforme requisitos
 - [CT005] Cadastre, altere e exclua uma atividade.
 
 ## Tecnologias
+- Xampp
+- Vscode
+- mySQL
+- nodemon
+- Insomnia
+- Prisma
 
 ## Passo a Passo de como executar a API
+1. Você deve clonar o repositório
+2. Logo em seguida deve instalar todas dependências:
+
+```
+cd api
+npm install
+npx prisma migrate dev --name init
+npx nodemon
+# ou
+npm start
+```
+
+3. Deve configurar o .env:
+
+```
+DATABASE_URL="mysql://root@localhost:3306/estacionamento?schema=public&timezone=UTC"
+```
+
+4. Inicie o Servidor
+5. No final de todos os processos, teste no Insomnia
